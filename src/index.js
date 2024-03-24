@@ -2,6 +2,7 @@ import dotenv from "dotenv"
 //  mongoose.set(‘strictQuery’, true) 
 // import moongose from "moongose";
 // import {DB_NAME} from "./constants";
+import {app} from './app.js'
 import connectDB from "./db/index.js"
 dotenv.config({
     path:'./env'
@@ -9,14 +10,11 @@ dotenv.config({
 
 connectDB();
 console.log(process.env.MONGODB_URL)
-.then(()=>{
-    app.listen(process.env.PORT||8000 ()=>{
-        console.log(`Running on the port : ${process.env.PORT}`);
+    app.listen(process.env.PORT || 8000, () => {
+        console.log(`⚙️ Server is running at port : ${process.env.PORT}`);
     })
-})
-.catch((error)=>{
-    console.log("Mongo Db connection failed",error);
-})
+
+
 
 
 
